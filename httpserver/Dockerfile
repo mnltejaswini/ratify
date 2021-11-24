@@ -12,6 +12,7 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/out/ /app/cmd/ratify 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/out/plugins/ /app/plugins/verifier/sbom
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/out/plugins/ /app/plugins/verifier/sample
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/out/plugins/ /app/plugins/verifier/cosign
 
 FROM alpine:3.14
